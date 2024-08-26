@@ -1,0 +1,14 @@
+{
+    "sections": {
+        "about-us-page": {
+            "type": "about-us-page",
+            "settings": {
+                "padding_top": 36,
+                "padding_bottom": 28
+            }
+        }
+    },
+    "order": [
+        "about-us-page",
+    ]
+}

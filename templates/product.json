@@ -1,0 +1,14 @@
+{
+    "sections": {
+        "product-page": {
+            "type": "product-page",
+            "settings": {
+                "padding_top": 36,
+                "padding_bottom": 28
+            }
+        }
+    },
+    "order": [
+        "product-page",
+    ]
+}

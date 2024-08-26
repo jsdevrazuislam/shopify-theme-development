@@ -1,0 +1,14 @@
+{
+    "sections": {
+        "customer-orders-page": {
+            "type": "customer-orders-page",
+            "settings": {
+                "padding_top": 36,
+                "padding_bottom": 28
+            }
+        }
+    },
+    "order": [
+        "customer-orders-page",
+    ]
+}

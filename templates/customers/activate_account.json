@@ -1,0 +1,14 @@
+{
+    "sections": {
+        "activate-user-account": {
+            "type": "activate-user-account",
+            "settings": {
+                "padding_top": 36,
+                "padding_bottom": 28
+            }
+        }
+    },
+    "order": [
+        "activate-user-account",
+    ]
+}

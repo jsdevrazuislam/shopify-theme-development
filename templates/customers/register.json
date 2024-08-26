@@ -1,0 +1,14 @@
+{
+    "sections": {
+        "customer-register-page": {
+            "type": "customer-register-page",
+            "settings": {
+                "padding_top": 36,
+                "padding_bottom": 28
+            }
+        }
+    },
+    "order": [
+        "customer-register-page",
+    ]
+}

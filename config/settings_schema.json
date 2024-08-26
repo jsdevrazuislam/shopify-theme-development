@@ -1,0 +1,19 @@
+[
+    {
+        "name": "theme_info",
+        "theme_name": "Theme structure",
+        "theme_author": "Hridoy Mahmud",
+        "theme_version": "1.0.0",
+        "theme_documentation_url": "https:\/\/devcoded.org",
+        "theme_support_url": "https:\/\/devcoded.org\/",
+    }, {
+        "name": "Test",
+        "settings": [
+            {
+                "type": "text",
+                "label": "Text",
+                "id": "test"
+            }
+        ]
+    }
+]

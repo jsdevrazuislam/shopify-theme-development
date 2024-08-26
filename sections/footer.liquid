@@ -1,0 +1,79 @@
+{% liquid
+  assign logo = section.settings.footerLogo
+%}
+
+<footer class="border-t border-gray-300 sec_padding">
+  <div class="container border-b border-gray-200">
+    <div class="flex justify-between gap-8">
+      <div class="w-4/12">
+        {% if logo != null %}
+          <img width="200px" height="200px" src="{{ logo |  image_url:width:200  }}" alt="{{ shop.name }}">
+        {% else %}
+          <img width="200px" height="200px" src="{{ 'logo.png' |  asset_url }}" alt="{{ shop.name }}">
+        {% endif %}
+        <p class="text-black mt-4">
+          {{ section.settings.description }}
+        </p>
+        <p class="text-gray-500 mt-4 max-w-[20em]">
+          {{ section.settings.address }}
+        </p>
+      </div>
+      <div class="w-[62%]">
+        <div class="flex">
+          {% render 'footer-item', label: 'Links', menus: section.settings.footerLinks.links %}
+          {% render 'footer-item', label: 'Helps', menus: section.settings.footerLinks1.links %}
+          <div class="w-[33%]">
+            <h6 class="text-gray-500">Newsletter</h6>
+            <div class="flex mt-3 items-center gap-2">
+              <input
+                type="text"
+                class="outline-none placeholder:text-[0.8em] border-b border-gray-400"
+                placeholder="Enter your email address"
+              >
+              <button class="border-b border-black">SUBSCRIBE</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="container">
+    <p class="py-2 text-black"><span class="footerDate">2024</span> furino. All rights reverved</p>
+  </div>
+</footer>
+
+{% schema %}
+{
+  "name": "footer",
+  "settings": [
+    {
+      "type": "image_picker",
+      "info": "Recomanded Size 200x200px",
+      "id": "footerLogo",
+      "label": "Select Your Logo"
+    },
+    {
+      "type": "text",
+      "id": "address",
+      "label": "Address",
+      "default": "400 University Drive Suite 200 Coral Gables, FL 33134 USA"
+    },
+    {
+      "type": "text",
+      "id": "description",
+      "label": "Description",
+      "default": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries."
+    },
+    {
+      "type": "link_list",
+      "id": "footerLinks",
+      "label": "Footer Links"
+    },
+    {
+      "type": "link_list",
+      "id": "footerLinks1",
+      "label": "Footer Links1"
+    }
+  ]
+}
+{% endschema %}

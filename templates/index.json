@@ -1,0 +1,14 @@
+{
+    "sections": {
+        "home-page": {
+            "type": "home-page",
+            "settings": {
+                "padding_top": 36,
+                "padding_bottom": 28
+            }
+        }
+    },
+    "order": [
+        "home-page",
+    ]
+}

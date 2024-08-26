@@ -1,0 +1,14 @@
+{
+    "sections": {
+        "collection-page": {
+            "type": "collection-page",
+            "settings": {
+                "padding_top": 36,
+                "padding_bottom": 28
+            }
+        }
+    },
+    "order": [
+        "collection-page",
+    ]
+}

@@ -1,0 +1,14 @@
+{
+    "sections": {
+        "addresses-account-page": {
+            "type": "addresses-account-page",
+            "settings": {
+                "padding_top": 36,
+                "padding_bottom": 28
+            }
+        }
+    },
+    "order": [
+        "addresses-account-page",
+    ]
+}

@@ -1,0 +1,14 @@
+{
+    "sections": {
+        "search-page": {
+            "type": "search-page",
+            "settings": {
+                "padding_top": 36,
+                "padding_bottom": 28
+            }
+        }
+    },
+    "order": [
+        "search-page",
+    ]
+}

@@ -1,0 +1,14 @@
+{
+    "sections": {
+        "user-acount-page": {
+            "type": "user-acount-page",
+            "settings": {
+                "padding_top": 36,
+                "padding_bottom": 28
+            }
+        }
+    },
+    "order": [
+        "user-acount-page",
+    ]
+}

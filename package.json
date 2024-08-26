@@ -1,0 +1,12 @@
+{
+  "name": "shopify-theme-development",
+  "version": "1.0.0",
+  "description": "test description",
+  "main": "index.js",
+  "scripts": {
+    "watch":"npx tailwindcss -i ./assets/style.css -o ./assets/output.css --watch"
+  },
+  "keywords": [],
+  "author": "razu islam",
+  "license": "ISC"
+}

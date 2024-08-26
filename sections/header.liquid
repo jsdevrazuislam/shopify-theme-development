@@ -1,0 +1,61 @@
+{% liquid
+  assign logo = section.settings.logo
+%}
+<header>
+  <div class="container">
+    <nav class="flex items-center justify-between">
+      <div class="logo">
+        <a href="/">
+          {% if logo != null %}
+            <img width="200px" height="200px" src="{{ logo |  image_url:width:200  }}" alt="{{ shop.name }}">
+          {% else %}
+            <img width="200px" height="200px" src="{{ 'logo.png' |  asset_url }}" alt="{{ shop.name }}">
+          {% endif %}
+        </a>
+      </div>
+      <ul class="flex items-center gap-6">
+        {% for item in section.settings.menu.links %}
+          <li>
+            <a href="{{ item.url }}">
+              {{ item.title }}
+            </a>
+          </li>
+        {% endfor %}
+      </ul>
+
+      <div class="flex items-center gap-6">
+        <a href="">
+          {% render 'icons', icon: 'user' %}
+        </a>
+        <a href="">
+          {% render 'icons', icon: 'search' %}
+        </a>
+        <a href="">
+          {% render 'icons', icon: 'heart' %}
+        </a>
+        <a href="">
+          {% render 'icons', icon: 'shopping-cart-outlined' %}
+        </a>
+      </div>
+    </nav>
+  </div>
+</header>
+
+{% schema %}
+{
+  "name": "header",
+  "settings": [
+    {
+      "type": "image_picker",
+      "info": "Recomanded Size 200x200px",
+      "id": "logo",
+      "label": "Select Your Logo"
+    },
+    {
+      "type": "link_list",
+      "id": "menu",
+      "label": "Menu"
+    }
+  ]
+}
+{% endschema %}

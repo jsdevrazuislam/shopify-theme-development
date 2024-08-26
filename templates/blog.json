@@ -1,0 +1,14 @@
+{
+    "sections": {
+        "blogs-page": {
+            "type": "blogs-page",
+            "settings": {
+                "padding_top": 36,
+                "padding_bottom": 28
+            }
+        }
+    },
+    "order": [
+        "blogs-page",
+    ]
+}

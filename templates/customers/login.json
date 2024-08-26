@@ -1,0 +1,14 @@
+{
+    "sections": {
+        "customer-login-page": {
+            "type": "customer-login-page",
+            "settings": {
+                "padding_top": 36,
+                "padding_bottom": 28
+            }
+        }
+    },
+    "order": [
+        "customer-login-page",
+    ]
+}
