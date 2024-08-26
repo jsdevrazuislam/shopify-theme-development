@@ -1,3 +1,42 @@
-<div>
-    This is the product page
-</div>
+<section>
+  <div class="bg-[#F9F1E7] py-8">
+    <div class="container">
+      <p>
+        Home > Shop > <span class="text-fontColorSecondary">{{ product.title }}</span>
+      </p>
+    </div>
+  </div>
+  <div class="container mt-8">
+    <div class="flex gap-12">
+      <div class="w-[40%]">
+        <div class="flex w-full gap-4">
+          <div class="flex flex-col gap-4 flex-shrink-0">
+            {% for image in product.images %}
+              <img
+                width="80px"
+                height="80px"
+                class="w-[80px] h-[80px] rounded-md object-cover"
+                src="{{ image.src |  image_url:width:80  }}"
+                alt="{{ product.title }}"
+              >
+            {% endfor %}
+          </div>
+          <img
+              width="100%"
+              height="100%"
+              class="w-full h-full object-cover rounded-md"
+              src="{{ product.featured_image.src |  image_url:width:'100%'  }}"
+              alt="{{ product.title }}"
+            >
+        </div>
+      </div>
+      <div class="w-[60%]">
+            <h1 class="text-[2.5em] text-fontColor font-bold">{{ product.title }}</h1>
+            <p class="text-fontColorSecondary text-[1em] font-[400]">{{ product.price |  money }}</p>
+            <p class="text-fontColorSecondary text-[1.2em]">
+                {{ product.description }}
+            </p>
+      </div>
+    </div>
+  </div>
+</section>

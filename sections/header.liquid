@@ -13,7 +13,7 @@
           {% endif %}
         </a>
       </div>
-      <ul class="flex items-center gap-6">
+      <ul class="hidden md-xl:flex items-center gap-6">
         {% for item in section.settings.menu.links %}
           <li>
             <a href="{{ item.url }}">
@@ -23,19 +23,31 @@
         {% endfor %}
       </ul>
 
-      <div class="flex items-center gap-6">
-        <a href="">
+      <button class="block md:hidden hamburger_menu">
+        {% render 'icons', icon: 'menu-bar' %}
+      </button>
+      <div class="hidden md:flex items-center gap-6">
+        <a href="/account/login">
           {% render 'icons', icon: 'user' %}
         </a>
-        <a href="">
+        <a href="/search">
           {% render 'icons', icon: 'search' %}
         </a>
-        <a href="">
+        <a href="/" class="relative">
+          <div class="w-4 h-4 bg-red-500 text-white text-[0.8em] flex items-center absolute top-[-1em] right-0 justify-center rounded-full">
+            0
+          </div>
           {% render 'icons', icon: 'heart' %}
         </a>
-        <a href="">
+        <a href="/" class="relative">
+          <div class="w-4 h-4 bg-red-500 text-white text-[0.8em] flex items-center absolute top-[-1em] right-0 justify-center rounded-full">
+            0
+          </div>
           {% render 'icons', icon: 'shopping-cart-outlined' %}
         </a>
+        <button class="md-xl:hidden block hamburger_menu">
+        {% render 'icons', icon: 'menu-bar' %}
+      </button>
       </div>
     </nav>
   </div>

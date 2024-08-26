@@ -4,8 +4,8 @@
 
 <footer class="border-t border-gray-300 sec_padding">
   <div class="container border-b border-gray-200">
-    <div class="flex justify-between gap-8">
-      <div class="w-4/12">
+    <div class="flex-col flex md-xl:flex-row justify-between gap-10">
+      <div class="w-full md-xl:w-4/12">
         {% if logo != null %}
           <img width="200px" height="200px" src="{{ logo |  image_url:width:200  }}" alt="{{ shop.name }}">
         {% else %}
@@ -18,11 +18,11 @@
           {{ section.settings.address }}
         </p>
       </div>
-      <div class="w-[62%]">
-        <div class="flex">
+      <div class="w-full md-xl:w-[62%]">
+        <div class="flex flex-wrap">
           {% render 'footer-item', label: 'Links', menus: section.settings.footerLinks.links %}
           {% render 'footer-item', label: 'Helps', menus: section.settings.footerLinks1.links %}
-          <div class="w-[33%]">
+          <div class="w-[50%] md-xl:w-[33%]">
             <h6 class="text-gray-500">Newsletter</h6>
             <div class="flex mt-3 items-center gap-2">
               <input

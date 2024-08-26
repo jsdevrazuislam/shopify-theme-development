@@ -1,0 +1,77 @@
+{% liquid
+  assign title = section.settings.browse_title
+  assign description = section.settings.browse_description
+%}
+<section class="sec_padding">
+  <div class="container">
+    {% render 'section-title', title: title, description: description %}
+    <div class="mt-8 flex justify-center items-center gap-8">
+      {% for item in section.blocks %}
+        <a href="{{ item.settings.url }}" class="flex justify-center items-center gap-4 flex-col rounded-md cursor-pointer">
+          <img
+            class="object-cover w-[20em] h-[20em]"
+            src="{{ item.settings.slider_img |  image_url:width:381  }}"
+            alt=""
+            width="381px"
+            height="480px"
+          >
+          <p class="text-fontColor font-semibold text-[1em] mt-2">{{ item.settings.title }}</p>
+        </a>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "browse",
+  "settings": [
+    {
+      "type": "text",
+      "id": "browse_title",
+      "label": "Browse Title",
+      "default": "Browse The Range"
+    },
+    {
+      "type": "text",
+      "id": "browse_description",
+      "label": "Browse Description",
+      "default": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+    }
+  ],
+  "blocks": [
+    {
+      "type": "slider",
+      "name": "Slide",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "slider_img",
+          "label": "Slide Image"
+        },
+        {
+            "type": "header",
+            "content": "Slider Content"
+        },
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Title",
+          "default": "Default Label"
+        },
+        {
+          "type": "url",
+          "id": "url",
+          "label": "Page Url"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Slide show",
+      "category": "Slider"
+    }
+  ]
+}
+{% endschema %}
