@@ -22,20 +22,41 @@
             {% endfor %}
           </div>
           <img
-              width="100%"
-              height="100%"
-              class="w-full h-full object-cover rounded-md"
-              src="{{ product.featured_image.src |  image_url:width:'100%'  }}"
-              alt="{{ product.title }}"
-            >
+            width="100%"
+            height="100%"
+            class="w-full h-full object-cover rounded-md"
+            src="{{ product.featured_image.src |  image_url:width:'100%'  }}"
+            alt="{{ product.title }}"
+          >
         </div>
       </div>
       <div class="w-[60%]">
-            <h1 class="text-[2.5em] text-fontColor font-bold">{{ product.title }}</h1>
-            <p class="text-fontColorSecondary text-[1em] font-[400]">{{ product.price |  money }}</p>
-            <p class="text-fontColorSecondary text-[1.2em]">
-                {{ product.description }}
-            </p>
+        <h1 class="text-[2.5em] text-fontColor font-bold">{{ product.title }}</h1>
+        <p class="text-fontColorSecondary text-[1em] font-[400]">{{ product.price | money }}</p>
+        <div class="flex gap-6 items-center">
+          <div class="flex items-center">
+            {% render 'icons', icon: 'start' %}
+            {% render 'icons', icon: 'start' %}
+            {% render 'icons', icon: 'start' %}
+            {% render 'icons', icon: 'start' %}
+            {% render 'icons', icon: 'start' %}
+          </div>
+          <div class="w-[1px] h-10 bg-gray-200"></div>
+          <p class="text-fontColorSecondary font-[400] text-[1em]">5 Customer Review</p>
+        </div>
+        <p class="text-fontColorSecondary text-[1.2em] mt-2">
+          {{ product.description }}
+        </p>
+        {% if product.variants.size > 0 %}
+          <div class="mt-4">
+            <p class="text-fontColorSecondary font-[400] mb-2">Size</p>
+            {% for item in product.variants %}
+              <button class="bg-primary rounded-md flex justify-center items-center uppercase text-white">
+                {{ item.title }}
+              </button>
+            {% endfor %}
+          </div>
+        {% endif %}
       </div>
     </div>
   </div>
